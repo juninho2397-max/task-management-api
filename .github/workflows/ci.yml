@@ -20,5 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-     - name: Executar testes
+      - name: Run tests
+        env:
+          PYTHONPATH: .
         run: python -m pytest -q
