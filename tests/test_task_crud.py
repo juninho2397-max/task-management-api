@@ -8,18 +8,18 @@ client = TestClient(app)
 
 def test_create_and_list_task():
     create_response = client.post(
-        "/tarefas",
-        json={"titulo": "Test automated task"},
+        "/tasks",
+        json={"title": "Test automated task"},
     )
 
     assert create_response.status_code == 201
 
     created_task = create_response.json()
 
-    assert created_task["titulo"] == "Test automated task"
+    assert created_task["title"] == "Test automated task"
     assert "id" in created_task
 
-    list_response = client.get("/tarefas")
+    list_response = client.get("/tasks")
 
     assert list_response.status_code == 200
 
