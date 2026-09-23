@@ -1,9 +1,9 @@
 from fastapi.testclient import TestClient
 
-from aplicativo.main import aplicativo
+from app.main import app
 
 
-client = TestClient(aplicativo)
+client = TestClient(app)
 
 
 def test_create_and_list_task():
